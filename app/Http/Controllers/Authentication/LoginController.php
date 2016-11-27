@@ -14,8 +14,12 @@ class LoginController extends \App\Http\Controllers\Controller {
     }
 
     public function __invoke() {
+        if (\Auth::check()) {
+            return $this->respondForbidden('Already authenticated');
+        }
+
         $credentials = \Request::only(['email', 'password']);
-        if (! \Auth::check() && \Auth::attempt($credentials)) {
+        if (\Auth::attempt($credentials)) {
             $user = \Auth::getUser();
             return $this->loginDtoOutConverter->process($user);
         }
