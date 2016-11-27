@@ -1,7 +1,7 @@
 var bgmenu = (function (bgmenu, $) {
     bgmenu.user = (function (user) {
         user.getAll = function () {
-            $.ajax('/users', {
+            $.ajax('/api/users', {
                 dataType : 'json',
                 contentType : 'application/json; utf-8'
             })
