@@ -14,6 +14,21 @@ var bgmenu = (function (bgmenu, $) {
                 });
         };
 
+        user.create = function (data) {
+            $.ajax('/api/users', {
+                dataType : 'json',
+                method   : 'POST',
+                data     : data,
+                contentType : 'application/json; utf-8'
+            })
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function (error) {
+                    // TODO
+                });
+        };
+
         return user;
     }(bgmenu.user || {}));
 
