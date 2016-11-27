@@ -13,9 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/users', 'User\ListController');
-Route::post('/users', 'User\CreateController');
-Route::post('/login', 'Authentication\LoginController');
+Route::group(['middleware' => 'format-response-content'], function (\Illuminate\Routing\Router $router) {
+    $router->get('/users', 'User\ListController');
+    $router->post('/users', 'User\CreateController');
+    $router->post('/login', 'Authentication\LoginController');
+});
+
 
 //Route::get('/user', function (Request $request) {
 //    return $request->user();

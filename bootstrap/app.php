@@ -42,6 +42,14 @@ $app->singleton(
 );
 
 /*
+ * Application bindings
+ */
+
+$app->singleton(\App\Bgmenu\OutputFormatter\ResponseFormatterFactory::class, function () {
+    return new \App\Bgmenu\OutputFormatter\ResponseFormatterFactory(config('response-formatter-map'));
+});
+
+/*
 |--------------------------------------------------------------------------
 | Return The Application
 |--------------------------------------------------------------------------
