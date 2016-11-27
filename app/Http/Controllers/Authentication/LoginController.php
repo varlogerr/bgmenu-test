@@ -2,6 +2,8 @@
 namespace App\Http\Controllers\Authentication;
 
 class LoginController extends \App\Http\Controllers\Controller {
+    use \App\Bgmenu\Responder\ForbiddenError;
+
     /**
      * @var \App\Bgmenu\Dto\Authentication\LoginDtoOutConverter
      */
@@ -18,6 +20,6 @@ class LoginController extends \App\Http\Controllers\Controller {
             return $this->loginDtoOutConverter->process($user);
         }
 
-        // TODO invent auth failed error
+        return $this->respondForbidden('Authentication failed');
     }
 }
