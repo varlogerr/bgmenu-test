@@ -36,7 +36,7 @@ var bgmenu = (function (bgmenu, $) {
                 };
 
                 if (typeof data !== 'undefined') {
-                    $.extend(settings, {data : JSON.stringify(data)});
+                    settings.data = JSON.stringify(data);
                 }
 
                 return $.ajax(url, settings);
