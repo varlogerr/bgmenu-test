@@ -18,5 +18,13 @@
     <target name="deploy">
         <!-- Create database -->
         <phingcall target="phinger:db:reset-db" />
+
+        <!-- chmod storage subdirectories -->
+        <chmod mode="0777" failonerror="false">
+            <fileset dir="storage">
+                <type type="dir" />
+                <depth min="0" />
+            </fileset>
+        </chmod>
     </target>
 </project>
