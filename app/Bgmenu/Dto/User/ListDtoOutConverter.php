@@ -27,7 +27,7 @@ class ListDtoOutConverter {
             $userDto->name = $user->name;
             $userDto->phone = $user->phone;
 
-            $usersDto[] = $userDto;
+            $usersDto[] = (array) $userDto;
         }
 
         return $usersDto;
