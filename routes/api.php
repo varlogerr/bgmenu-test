@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/users', 'User\ListController');
+Route::post('/users', 'User\CreateController');
 
 //Route::get('/user', function (Request $request) {
 //    return $request->user();
