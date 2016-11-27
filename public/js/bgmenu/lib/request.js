@@ -8,17 +8,7 @@ var bgmenu = (function (bgmenu, $) {
              * @param data
              */
             request.get = function (url, data) {
-                var settings = {
-                    dataType : 'json',
-                    method   : 'GET',
-                    contentType : 'application/json; utf-8'
-                };
-
-                if (typeof data !== 'undefined') {
-                    $.extend(settings, {data : data});
-                }
-
-                return $.ajax(url, settings);
+                return this.makeRequest('GET', url, data);
             };
 
             /**
@@ -28,9 +18,20 @@ var bgmenu = (function (bgmenu, $) {
              * @param data
              */
             request.post = function (url, data) {
+                return this.makeRequest('POST', url, data);
+            };
+
+            /**
+             * Make ajax request
+             *
+             * @param method
+             * @param url
+             * @param data
+             */
+            request.makeRequest = function (method, url, data) {
                 var settings = {
                     dataType : 'json',
-                    method   : 'POST',
+                    method   : method,
                     contentType : 'application/json; utf-8'
                 };
 
