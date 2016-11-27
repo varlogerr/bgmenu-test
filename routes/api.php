@@ -13,7 +13,18 @@ use Illuminate\Http\Request;
 |
 */
 
-
+Route::get('/users', function (Request $request) {
+    return [
+        [
+            'name' => 'dummy',
+            'age' => 20,
+        ],
+        [
+            'name' => 'helloworld',
+            'age' => 'immortal',
+        ],
+    ];
+});
 
 //Route::get('/user', function (Request $request) {
 //    return $request->user();
