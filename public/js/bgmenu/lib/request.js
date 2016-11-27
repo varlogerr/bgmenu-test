@@ -21,6 +21,12 @@ var bgmenu = (function (bgmenu, $) {
                 return $.ajax(url, settings);
             };
 
+            /**
+             * Make post request and return promise
+             *
+             * @param url
+             * @param data
+             */
             request.post = function (url, data) {
                 var settings = {
                     dataType : 'json',
