@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project
+        name="BGMenu Deploy"
+        default="deploy"
+>
+    <!-- Import private property -->
+    <property file="./build.private.yml" />
+
+    <!-- Import libraries -->
+    <property file="./vendor/phinger/db/db.yml" override="false" />
+    <import file="./vendor/phinger/db/db.xml" />
+
+    <target name="deploy">
+        <phingcall target="phinger:db:reset-db" />
+    </target>
+</project>
