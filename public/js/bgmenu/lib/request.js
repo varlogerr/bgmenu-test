@@ -32,11 +32,11 @@ var bgmenu = (function (bgmenu, $) {
                 var settings = {
                     dataType : 'json',
                     method   : method,
-                    contentType : 'application/json; utf-8'
+                    contentType : 'application/json; charset=utf-8'
                 };
 
                 if (typeof data !== 'undefined') {
-                    $.extend(settings, {data : data});
+                    $.extend(settings, {data : JSON.stringify(data)});
                 }
 
                 return $.ajax(url, settings);
