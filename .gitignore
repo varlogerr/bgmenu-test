@@ -8,3 +8,7 @@ Homestead.yaml
 
 # build ignores
 /build.private.yml
+
+# laravel ide helper ignores
+/.phpstorm.meta.php
+/_ide_helper.php
