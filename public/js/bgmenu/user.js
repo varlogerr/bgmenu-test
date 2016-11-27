@@ -1,11 +1,7 @@
-var bgmenu = (function (bgmenu, $) {
+var bgmenu = (function (bgmenu, requester) {
     bgmenu.user = (function (user) {
         user.getAll = function () {
-            $.ajax('/api/users', {
-                dataType : 'json',
-                method   : 'GET',
-                contentType : 'application/json; utf-8'
-            })
+            requester.get('/api/users')
                 .done(function (data) {
                     console.log(data);
                 })
@@ -33,4 +29,4 @@ var bgmenu = (function (bgmenu, $) {
     }(bgmenu.user || {}));
 
     return bgmenu;
-}(bgmenu || {}, jQuery));
+}(bgmenu || {}, bgmenu.lib.request));
