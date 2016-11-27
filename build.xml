@@ -11,7 +11,12 @@
     <property file="./vendor/phinger/db/db.yml" override="false" />
     <import file="./vendor/phinger/db/db.xml" />
 
+    <!--
+        This is development deploy
+        never use in production!!!
+    -->
     <target name="deploy">
+        <!-- Create database -->
         <phingcall target="phinger:db:reset-db" />
     </target>
 </project>
