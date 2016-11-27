@@ -3,6 +3,7 @@ var bgmenu = (function (bgmenu, $) {
         user.getAll = function () {
             $.ajax('/api/users', {
                 dataType : 'json',
+                method   : 'GET',
                 contentType : 'application/json; utf-8'
             })
                 .done(function (data) {
