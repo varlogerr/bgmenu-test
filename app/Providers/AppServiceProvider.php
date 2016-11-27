@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \App\User::observe(\App\Bgmenu\Observers\UserObserver::class);
     }
 
     /**
