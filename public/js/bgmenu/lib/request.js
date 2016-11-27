@@ -21,6 +21,20 @@ var bgmenu = (function (bgmenu, $) {
                 return $.ajax(url, settings);
             };
 
+            request.post = function (url, data) {
+                var settings = {
+                    dataType : 'json',
+                    method   : 'POST',
+                    contentType : 'application/json; utf-8'
+                };
+
+                if (typeof data !== 'undefined') {
+                    $.extend(settings, {data : data});
+                }
+
+                return $.ajax(url, settings);
+            };
+
             return request;
         }(lib.request || {}));
 

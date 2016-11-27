@@ -11,12 +11,7 @@ var bgmenu = (function (bgmenu, requester) {
         };
 
         user.create = function (data) {
-            $.ajax('/api/users', {
-                dataType : 'json',
-                method   : 'POST',
-                data     : data,
-                contentType : 'application/json; utf-8'
-            })
+            requester.post('/api/users', data)
                 .done(function (data) {
                     console.log(data);
                 })
