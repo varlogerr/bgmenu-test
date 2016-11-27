@@ -1,7 +1,7 @@
 var bgmenu = (function (bgmenu, requester) {
     bgmenu.user = (function (user) {
         user.getAll = function () {
-            requester.get('/api/users')
+            return requester.get('/api/users')
                 .done(function (data) {
                     console.log(data);
                 })
@@ -11,7 +11,7 @@ var bgmenu = (function (bgmenu, requester) {
         };
 
         user.create = function (data) {
-            requester.post('/api/users', data)
+            return requester.post('/api/users', data)
                 .done(function (data) {
                     console.log(data);
                 })
