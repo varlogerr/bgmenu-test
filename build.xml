@@ -26,5 +26,8 @@
                 <depth min="0" />
             </fileset>
         </chmod>
+
+        <!-- chmod bootstrap cache -->
+        <chmod file="bootstrap/cache" mode="0777" failonerror="false" />
     </target>
 </project>
