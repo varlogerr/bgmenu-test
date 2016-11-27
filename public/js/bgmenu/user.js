@@ -20,6 +20,16 @@ var bgmenu = (function (bgmenu, requester) {
                 });
         };
 
+        user.login = function (data) {
+            return requester.post('/api/login', data)
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function (error) {
+                    // TODO
+                });
+        };
+
         return user;
     }(bgmenu.user || {}));
 
