@@ -17,6 +17,7 @@ Route::group(['middleware' => 'format-response-content'], function (\Illuminate\
     $router->get('/users', 'User\ListController');
     $router->post('/users', 'User\CreateController');
     $router->delete('/users/{id}', 'User\DeleteController');
+    $router->put('/users/{id}', 'User\UpdateController');
     $router->post('/login', 'Authentication\LoginController');
 });
 

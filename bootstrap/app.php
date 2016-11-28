@@ -53,6 +53,10 @@ $app->bind(\App\Bgmenu\Services\User\CreateValidator::class, function () {
     return new \App\Bgmenu\Services\User\CreateValidator(config('validation.user-create'));
 });
 
+$app->bind(\App\Bgmenu\Services\User\UpdateValidator::class, function () {
+    return new \App\Bgmenu\Services\User\UpdateValidator(config('validation.user-update'));
+});
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
