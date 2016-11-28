@@ -20,11 +20,7 @@ class UpdateDtoOutConverter {
         $updateProductDtoOut->amount = $product->amount;
         $updateProductDtoOut->available_from = $product->available_from;
         $updateProductDtoOut->available_to = $product->available_to;
-
-        $now = new \Carbon\Carbon();
-        $from = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_from);
-        $to = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_to);
-        $updateProductDtoOut->is_available_now = $now->between($from, $to);
+        $updateProductDtoOut->is_available_now = $product->is_available_now;
 
         return (array) $updateProductDtoOut;
     }

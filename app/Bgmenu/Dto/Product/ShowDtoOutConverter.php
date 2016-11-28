@@ -21,11 +21,7 @@ class ShowDtoOutConverter {
         $productShowDtoOut->available_from = $product->available_from;
         $productShowDtoOut->available_to = $product->available_to;
         $productShowDtoOut->created_at = (string) $product->created_at;
-
-        $now = new \Carbon\Carbon();
-        $from = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_from);
-        $to = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_to);
-        $productShowDtoOut->is_available_now = $now->between($from, $to, true);
+        $productShowDtoOut->is_available_now = $product->is_available_now;
 
         return (array) $productShowDtoOut;
     }

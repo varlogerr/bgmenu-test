@@ -26,12 +26,7 @@ class ListDtoOutConverter {
             $productListDtoSingle->slug = $product->slug;
             $productListDtoSingle->description = $product->description;
             $productListDtoSingle->price = $product->price;
-
-            $now = new \Carbon\Carbon();
-            $from = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_from);
-            $to = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_to);
-
-            $productListDtoSingle->is_available_now = $now->between($from, $to, true);
+            $productListDtoSingle->is_available_now = $product->is_available_now;
 
             $returnProducts[] = $productListDtoSingle;
         }
