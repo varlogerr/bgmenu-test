@@ -21,7 +21,10 @@ abstract class AbstractValidator {
     /**
      * @return int
      */
-    abstract public function getErrorCode();
+    public function getErrorCode() {
+        return 400;
+    }
+
     /**
      * @return string
      */
