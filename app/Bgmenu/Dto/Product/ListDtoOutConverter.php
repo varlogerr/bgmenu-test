@@ -27,11 +27,11 @@ class ListDtoOutConverter {
             $productListDtoSingle->description = $product->description;
             $productListDtoSingle->price = $product->price;
 
-            $from = \DateTime::createFromFormat('Y-m-d', $product->available_from);
-            $to = \DateTime::createFromFormat('Y-m-d', $product->available_to);
-            $now = new \DateTime();
+            $now = new \Carbon\Carbon();
+            $from = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_from);
+            $to = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_to);
 
-            $productListDtoSingle->is_available_now = $now >= $from && $now <= $to;
+            $productListDtoSingle->is_available_now = $now->between($from, $to, true);
 
             $returnProducts[] = $productListDtoSingle;
         }

@@ -21,11 +21,11 @@ class CreateDtoOutConverter {
         $productCreateDto->available_from = $product->available_from;
         $productCreateDto->available_to = $product->available_to;
 
-        $from = \DateTime::createFromFormat('Y-m-d', $productCreateDto->available_from);
-        $to = \DateTime::createFromFormat('Y-m-d', $productCreateDto->available_to);
-        $now = new \DateTime();
+        $now = new \Carbon\Carbon();
+        $from = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_from);
+        $to = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_to);
 
-        $productCreateDto->is_available_now = $now >= $from && $now <= $to;
+        $productCreateDto->is_available_now = $now->between($from, $to);
 
         return (array) $productCreateDto;
     }
