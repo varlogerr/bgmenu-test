@@ -25,7 +25,7 @@ class CreateDtoOutConverter {
         $from = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_from);
         $to = \Carbon\Carbon::createFromFormat('Y-m-d', $product->available_to);
 
-        $productCreateDto->is_available_now = $now->between($from, $to);
+        $productCreateDto->is_available_now = $now->between($from, $to, true);
 
         return (array) $productCreateDto;
     }
