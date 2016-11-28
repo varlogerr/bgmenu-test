@@ -30,6 +30,16 @@ var bgmenu = (function (bgmenu, requester) {
                 });
         };
 
+        product.show = function (id) {
+            return requester.get('/api/products/' + id)
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function () {
+                    // TODO
+                });
+        };
+
         return product;
     }(bgmenu.product || {}));
 
