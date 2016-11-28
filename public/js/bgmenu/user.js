@@ -40,6 +40,16 @@ var bgmenu = (function (bgmenu, requester) {
                 });
         };
 
+        user.update = function (id, data) {
+            return requester.put('/api/users/' + id, data)
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function (error) {
+                    // TODO
+                });
+        };
+
         return user;
     }(bgmenu.user || {}));
 
