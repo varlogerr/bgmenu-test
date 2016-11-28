@@ -16,8 +16,8 @@ class DeleteController extends \App\Http\Controllers\Controller {
         $this->deleteUserService = $deleteUserService;
     }
 
-    public function __invoke() {
-        $user = $this->deleteUserService->process(\Request::input('id'));
+    public function __invoke($id) {
+        $user = $this->deleteUserService->process($id);
         if (! $user) {
             return $this->respondNotFound('User not fount');
         }

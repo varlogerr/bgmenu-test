@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::group(['middleware' => 'format-response-content'], function (\Illuminate\Routing\Router $router) {
     $router->get('/users', 'User\ListController');
     $router->post('/users', 'User\CreateController');
-    $router->delete('/users', 'User\DeleteController');
+    $router->delete('/users/{id}', 'User\DeleteController');
     $router->post('/login', 'Authentication\LoginController');
 });
 
