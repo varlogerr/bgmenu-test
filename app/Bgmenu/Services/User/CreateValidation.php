@@ -2,18 +2,12 @@
 
 namespace App\Bgmenu\Services\User;
 
-class CreateValidation {
-    private $config;
-
-    public function __construct($config) {
-        $this->config = $config;
+class CreateValidation extends \App\Bgmenu\Services\AbstractValidator {
+    public function getErrorCode() {
+        return 400;
     }
 
-    public function process($data) {
-        $validator = \Validator::make($data, $this->config);
-
-        if ($validator->fails()) {
-            throw new \App\Bgmenu\Exceptions\ValidationException('Invalid input', 400, null, $validator->errors()->messages());
-        }
+    public function getErrorMessage() {
+        return 'Invalid input';
     }
 }
