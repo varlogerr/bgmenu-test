@@ -24,6 +24,7 @@ Route::group(['middleware' => 'format-response-content'], function (\Illuminate\
     $router->get('/products', 'Product\ListController');
     $router->delete('/products/{id}', 'Product\DeleteController');
     $router->get('/products/{id}', 'Product\ShowController');
+    $router->put('/products/{id}', 'Product\UpdateController');
 
     $router->post('/login', 'Authentication\LoginController');
 });
