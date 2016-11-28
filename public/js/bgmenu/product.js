@@ -20,6 +20,16 @@ var bgmenu = (function (bgmenu, requester) {
                 });
         };
 
+        product.delete = function (id) {
+            return requester.delete('/api/products/' + id)
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function () {
+                    // TODO
+                });
+        };
+
         return product;
     }(bgmenu.product || {}));
 
