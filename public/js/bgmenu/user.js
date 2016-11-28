@@ -1,6 +1,6 @@
 var bgmenu = (function (bgmenu, requester) {
     bgmenu.user = (function (user) {
-        user.getAll = function () {
+        user.list = function () {
             return requester.get('/api/users')
                 .done(function (data) {
                     console.log(data);
