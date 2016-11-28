@@ -32,6 +32,16 @@ var bgmenu = (function (bgmenu, $) {
             };
 
             /**
+             * Make put request and return promise
+             *
+             * @param url
+             * @param data
+             */
+            request.put = function (url, data) {
+                return this.makeRequest('PUT', url, data);
+            };
+
+            /**
              * Make ajax request
              *
              * @param method
