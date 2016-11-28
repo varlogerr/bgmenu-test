@@ -10,6 +10,16 @@ var bgmenu = (function (bgmenu, requester) {
                 });
         };
 
+        product.list = function () {
+            return requester.get('/api/products')
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function () {
+                    // TODO
+                });
+        };
+
         return product;
     }(bgmenu.product || {}));
 
