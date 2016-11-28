@@ -21,6 +21,12 @@ var bgmenu = (function (bgmenu, $) {
                 return this.makeRequest('POST', url, data);
             };
 
+            /**
+             * Make delete request and return promise
+             *
+             * @param url
+             * @param data
+             */
             request.delete = function (url, data) {
                 return this.makeRequest('DELETE', url, data);
             };
