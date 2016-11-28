@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         \Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('slug')->unique();
             $table->text('description');
             $table->decimal('price', 9, 2);
@@ -33,6 +33,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('products');
+        \Schema::drop('products');
     }
 }
