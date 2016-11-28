@@ -15,7 +15,5 @@ class CreateValidation {
         if ($validator->fails()) {
             throw new \App\Bgmenu\Exceptions\ValidationException('Invalid input', 400, null, $validator->errors()->messages());
         }
-
-        return [];
     }
 }
