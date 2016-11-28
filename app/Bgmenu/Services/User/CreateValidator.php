@@ -2,7 +2,7 @@
 
 namespace App\Bgmenu\Services\User;
 
-class CreateValidation extends \App\Bgmenu\Services\AbstractValidator {
+class CreateValidator extends \App\Bgmenu\Services\AbstractValidator {
     public function getErrorCode() {
         return 400;
     }

@@ -5,7 +5,7 @@ namespace App\Bgmenu\Services\User;
 class CreateService {
     private $userCreateValidator;
 
-    public function __construct(CreateValidation $userCreateValidator) {
+    public function __construct(CreateValidator $userCreateValidator) {
         $this->userCreateValidator = $userCreateValidator;
     }
 

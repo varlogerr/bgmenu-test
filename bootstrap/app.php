@@ -49,8 +49,8 @@ $app->singleton(\App\Bgmenu\OutputFormatter\ResponseFormatterFactory::class, fun
     return new \App\Bgmenu\OutputFormatter\ResponseFormatterFactory(config('response-formatter-map'));
 });
 
-$app->bind(\App\Bgmenu\Services\User\CreateValidation::class, function () {
-    return new \App\Bgmenu\Services\User\CreateValidation(config('validation.user-create'));
+$app->bind(\App\Bgmenu\Services\User\CreateValidator::class, function () {
+    return new \App\Bgmenu\Services\User\CreateValidator(config('validation.user-create'));
 });
 
 /*
