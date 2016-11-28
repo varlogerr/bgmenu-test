@@ -30,6 +30,16 @@ var bgmenu = (function (bgmenu, requester) {
                 });
         };
 
+        user.delete = function (data) {
+            return requester.delete('/api/users', data)
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function (error) {
+                    // TODO
+                });
+        };
+
         return user;
     }(bgmenu.user || {}));
 
