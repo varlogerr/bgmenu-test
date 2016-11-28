@@ -6,18 +6,22 @@ class DeleteController extends \App\Http\Controllers\Controller {
     use \App\Bgmenu\Responder\NotFoundError;
 
     private $deleteUserDtoOutConverter;
+    private $deleteUserService;
 
-    public function __construct(\App\Bgmenu\Dto\User\DeleteDtoOutConverter $deleteUserDtoOutConverter) {
+    public function __construct(
+        \App\Bgmenu\Dto\User\DeleteDtoOutConverter $deleteUserDtoOutConverter,
+        \App\Bgmenu\Services\User\DeleteService $deleteUserService
+    ) {
         $this->deleteUserDtoOutConverter = $deleteUserDtoOutConverter;
+        $this->deleteUserService = $deleteUserService;
     }
 
     public function __invoke() {
-        $user = \App\User::find(\Request::input('id'));
+        $user = $this->deleteUserService->process(\Request::input('id'));
         if (! $user) {
-            return $this->respondNotFound('User not found');
+            return $this->respondNotFound('User not fount');
         }
 
-        $user->delete();
         return $this->deleteUserDtoOutConverter->process($user);
     }
 }
