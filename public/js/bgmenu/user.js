@@ -50,6 +50,16 @@ var bgmenu = (function (bgmenu, requester) {
                 });
         };
 
+        user.show = function (id) {
+            return requester.get('/api/users/' + id)
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function (error) {
+                    // TODO
+                });
+        };
+
         return user;
     }(bgmenu.user || {}));
 
