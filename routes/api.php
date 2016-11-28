@@ -21,6 +21,7 @@ Route::group(['middleware' => 'format-response-content'], function (\Illuminate\
     $router->get('/users/{id}', 'User\ShowController');
 
     $router->post('/products', 'Product\CreateController');
+    $router->get('/products', 'Product\ListController');
 
     $router->post('/login', 'Authentication\LoginController');
 });
