@@ -3,13 +3,14 @@
 namespace App\Bgmenu\Services\User;
 
 class CreateValidation {
+    private $config;
+
+    public function __construct($config) {
+        $this->config = $config;
+    }
+
     public function process($data) {
-        $validator = \Validator::make($data, [
-            'email'    => 'required|unique:users,email|email|max:255',
-            'name'     => 'required|max:255',
-            'phone'    => 'required|max:255',
-            'password' => 'required|min:6',
-        ]);
+        $validator = \Validator::make($data, $this->config);
 
         if ($validator->fails()) {
             throw new \App\Bgmenu\Exceptions\ValidationException('Invalid input', 400, null, $validator->errors()->messages());
