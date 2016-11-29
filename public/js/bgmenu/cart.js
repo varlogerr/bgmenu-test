@@ -10,6 +10,16 @@ var bgmenu = (function (bgmenu, requester) {
                 });
         };
 
+        cart.list = function () {
+            requester.get('/api/orders')
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function () {
+                    console.log('Error');
+                });
+        };
+
         return cart;
     }(bgmenu.cart || {}));
 
