@@ -3,7 +3,7 @@ var bgmenu = (function (bgmenu, requester) {
         cart.add = function (data) {
             requester.post('/api/orders', data)
                 .done(function (data) {
-
+                    console.log(data);
                 })
                 .fail(function () {
                     console.log('Error');
