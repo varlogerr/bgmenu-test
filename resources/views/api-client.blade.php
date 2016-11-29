@@ -11,5 +11,6 @@
         <script src="{{ URL::asset('js/bgmenu/lib/request.js') }}"></script>
         <script src="{{ URL::asset('js/bgmenu/user.js') }}"></script>
         <script src="{{ URL::asset('js/bgmenu/product.js') }}"></script>
+        <script src="{{ URL::asset('js/bgmenu/cart.js') }}"></script>
     </body>
 </html>
