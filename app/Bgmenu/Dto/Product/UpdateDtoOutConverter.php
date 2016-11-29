@@ -16,7 +16,7 @@ class UpdateDtoOutConverter {
         $updateProductDtoOut->name = $product->name;
         $updateProductDtoOut->slug = $product->slug;
         $updateProductDtoOut->description = $product->description;
-        $updateProductDtoOut->price = $product->price;
+        $updateProductDtoOut->price = \App\Bgmenu\Helpers\Price::createFromInt($product->price)->getStringValue();
         $updateProductDtoOut->amount = $product->amount;
         $updateProductDtoOut->available_from = $product->available_from;
         $updateProductDtoOut->available_to = $product->available_to;

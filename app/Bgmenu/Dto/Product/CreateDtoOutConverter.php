@@ -16,7 +16,7 @@ class CreateDtoOutConverter {
         $productCreateDto->name = $product->name;
         $productCreateDto->slug = $product->slug;
         $productCreateDto->description = $product->description;
-        $productCreateDto->price = $product->price;
+        $productCreateDto->price = \App\Bgmenu\Helpers\Price::createFromInt($product->price)->getStringValue();
         $productCreateDto->amount = $product->amount;
         $productCreateDto->available_from = $product->available_from;
         $productCreateDto->available_to = $product->available_to;

@@ -14,6 +14,10 @@ class CreateService {
 
     public function process($data) {
         $this->createProductValidator->process($data);
+
+        if (isset($data['price'])) {
+            $data['price'] = \App\Bgmenu\Helpers\Price::createFromString($data['price'])->getIntValue();
+        }
         return \App\Product::create($data);
     }
 }

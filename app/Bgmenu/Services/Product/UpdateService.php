@@ -19,6 +19,9 @@ class UpdateService {
 
         $this->productUpdateValidator->process($data);
 
+        if (isset($data['price'])) {
+            $data['price'] = \App\Bgmenu\Helpers\Price::createFromString($data['price'])->getIntValue();
+        }
         $product->update($data);
         return $product;
     }
