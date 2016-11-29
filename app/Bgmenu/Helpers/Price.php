@@ -6,7 +6,7 @@ class Price {
     private $price;
 
     protected function __construct($intPrice) {
-        $this->price = $intPrice;
+        $this->price = (int) $intPrice;
     }
 
     public static function createFromInt($intPrice) {
