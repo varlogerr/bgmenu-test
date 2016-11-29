@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name'     => 'max:255',
-    'phone'    => 'max:255',
-    'password' => 'min:6',
+    'name'     => 'string|max:255',
+    'phone'    => 'string|max:255',
+    'password' => 'string|min:6',
 ];

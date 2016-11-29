@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'name'           => 'max:255',
-    'description'    => 'max:10000',
+    'name'           => 'string|max:255',
+    'description'    => 'string|max:10000',
     'price'          => 'regex:/^\d{1,7}\.\d{2}$/',
     'amount'         => 'integer|min:0',
     'available_from' => 'date|date_format:Y-m-d|after:yesterday',

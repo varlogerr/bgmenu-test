@@ -2,7 +2,7 @@
 
 return [
     'email'    => 'required|unique:users,email|email|max:255',
-    'name'     => 'required|max:255',
-    'phone'    => 'required|max:255',
-    'password' => 'required|min:6',
+    'name'     => 'required|string|max:255',
+    'phone'    => 'required|string|max:255',
+    'password' => 'required|string|min:6',
 ];
