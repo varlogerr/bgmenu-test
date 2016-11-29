@@ -26,6 +26,11 @@ Route::group(['middleware' => 'format-response-content'], function (\Illuminate\
     $router->get('/products/{id}', 'Product\ShowController');
     $router->put('/products/{id}', 'Product\UpdateController');
 
+    Route::group(['middleware' => 'auth'], function (\Illuminate\Routing\Router $router) {
+        $router->post('/orders', 'Order\CreateController');
+    });
+
+
     $router->post('/login', 'Authentication\LoginController');
 });
 
