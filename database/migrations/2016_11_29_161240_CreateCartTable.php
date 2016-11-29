@@ -16,7 +16,7 @@ class CreateCartTable extends Migration
         \Schema::create('carts', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->string('order_hash')->unique();
+            $table->string('hash')->unique();
             $table->enum('status', ['new', 'processing', 'completed', 'cancelled']);
             $table->timestamps();
 
