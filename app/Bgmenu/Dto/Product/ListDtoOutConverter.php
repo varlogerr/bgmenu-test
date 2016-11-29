@@ -26,6 +26,7 @@ class ListDtoOutConverter {
             $productListDtoSingle->slug = $product->slug;
             $productListDtoSingle->description = $product->description;
             $productListDtoSingle->price = \App\Bgmenu\Helpers\Price::createFromInt($product->price)->getStringValue();
+            $productListDtoSingle->price_with_vat = \App\Bgmenu\Helpers\Price::createFromInt($product->price_with_vat)->getStringValue();
             $productListDtoSingle->is_available_now = $product->is_available_now;
 
             $returnProducts[] = $productListDtoSingle;

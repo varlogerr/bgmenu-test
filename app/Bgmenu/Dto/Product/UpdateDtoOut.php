@@ -8,6 +8,7 @@ class UpdateDtoOut {
     public $slug;
     public $description;
     public $price;
+    public $price_with_vat;
     public $amount;
     public $available_from;
     public $available_to;

@@ -8,5 +8,6 @@ class ListDtoOutSingle {
     public $slug;
     public $description;
     public $price;
+    public $price_with_vat;
     public $is_available_now;
 }

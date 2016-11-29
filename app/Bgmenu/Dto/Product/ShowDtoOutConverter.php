@@ -17,6 +17,7 @@ class ShowDtoOutConverter {
         $productShowDtoOut->slug = $product->slug;
         $productShowDtoOut->description = $product->description;
         $productShowDtoOut->price = \App\Bgmenu\Helpers\Price::createFromInt($product->price)->getStringValue();
+        $productShowDtoOut->price_with_vat = \App\Bgmenu\Helpers\Price::createFromInt($product->price_with_vat)->getStringValue();
         $productShowDtoOut->amount = $product->amount;
         $productShowDtoOut->available_from = $product->available_from;
         $productShowDtoOut->available_to = $product->available_to;
