@@ -26,18 +26,19 @@ class CreateService {
                 ['cart_id', $newCart->id],
                 ['product_id', $data['product_id']],
             ])->first();
-
-            $data['quantity'] = $order->quantity + $data['quantity'];
-
-            $this->orderCreateValidator->process($data);
-            $order->quantity = $data['quantity'];
         } else {
             $newCart = new \App\Cart([
                 'user_id' => $currentUserId,
                 'status'  => 'new',
             ]);
             $newCart->hash = \Ramsey\Uuid\Uuid::uuid4();
+        }
 
+        if ($order) {
+            $data['quantity'] = $order->quantity + $data['quantity'];
+            $this->orderCreateValidator->process($data);
+            $order->quantity = $data['quantity'];
+        } else {
             $order = new \App\Order([
                 'product_id' => $data['product_id'],
                 'cart_id'    => $newCart->id,
@@ -50,6 +51,6 @@ class CreateService {
             $newCart->orders()->save($order);
         });
 
-        return $newCart;
+        return $order;
     }
 }
