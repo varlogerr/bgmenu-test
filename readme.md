@@ -1,8 +1,30 @@
 # Test app
 
+## Install development runtime (optional)
+
+If you want to run the application in isolation you can use virtual machines. Here is one, that perfectly matches this very project.  
+1) Install VirtualBox on your machine https://www.virtualbox.org/  
+2) Install vagrant https://www.vagrantup.com/  
+3) Make sure Intel Virtualization Technology and VT-d are enables in you BIOS! We are going  
+4) Make a directory anywhere on your hard drive and cd to it  
+5) run `git clone https://github.com/varlogerr/env.vagrant.trusty64-base.git .`  
+6) run `git clone https://github.com/varlogerr/env.puppet.phpserv-base.git env/dev` (directory separator in `env/dev` must correspond to ones your operating system)  
+7) run `vagrant up && vagrant ssh`  
+After all installations are complete you'll be in virtual box terminal  
+8) cd to `/home/vagrant/Projects/sites/site` and run `rmdir public`  
+In order to clone the project you'll need to clone it to the same directory, (i.e. `site` directory).  
+That means you'll need to run `git clone https://github.com/varlogerr/bgmenu-test.git .` (with the dot in the end!)  
+Now you're ready to install the application, start from instruction 3  
+
+**NB** when you finish with the application exit the vagrant box with command `exit`  
+and after that run `vagrant destroy -f`, this will remove this virtual box from your machine
+
+## Install application
+
 1) `git clone` this repo  
-2) run `composer install`  
-3) copy `vendor/phinger/db.yml` to `private.yml` (on the same level where your vendor dir is)  
+2) cd to the cloned directory 
+3) run `composer install`  
+4) copy `vendor/phinger/db.yml` to `private.yml` (on the same level where your vendor dir is)  
 and change `dbname`, `dbuser`, `dbpass` and `dsn` keys to correspond to your ones
 ```
 phinger:
@@ -17,5 +39,5 @@ phinger:
     dump_path: ./backup/sql/dump.sql
 ```
 No need to create the database on your server, it will be created by the phing script. `dbuser` needs to have privileges to create databases.  
-4) run `vendor/bin/phing`  
-5) now project is deployed to your machine. Go to the home page of the project and see instructions  
+5) run `vendor/bin/phing`  
+6) now project is deployed to your machine. Go to the home page of the project and see instructions  
