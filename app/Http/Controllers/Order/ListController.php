@@ -11,7 +11,6 @@ class ListController extends \App\Http\Controllers\Controller {
 
     public function __invoke() {
         $orders = \Auth::user()->carts()->with('orders.product')->get();
-//        $orders = \App\Cart::with('orders')->where('user_id', \Auth::user()->id)->get();
         return $this->orderListDtoConverter->process($orders);
     }
 }
