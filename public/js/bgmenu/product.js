@@ -5,8 +5,8 @@ var bgmenu = (function (bgmenu, requester) {
                 .done(function (data) {
                     console.log(data);
                 })
-                .fail(function () {
-                    // TODO
+                .fail(function (xhr, status, error) {
+                    console.log("error: " + xhr.responseText);
                 });
         };
 
@@ -15,8 +15,8 @@ var bgmenu = (function (bgmenu, requester) {
                 .done(function (data) {
                     console.log(data);
                 })
-                .fail(function () {
-                    // TODO
+                .fail(function (xhr, status, error) {
+                    console.log("error: " + xhr.responseText);
                 });
         };
 
@@ -25,8 +25,8 @@ var bgmenu = (function (bgmenu, requester) {
                 .done(function (data) {
                     console.log(data);
                 })
-                .fail(function () {
-                    // TODO
+                .fail(function (xhr, status, error) {
+                    console.log("error: " + xhr.responseText);
                 });
         };
 
@@ -35,8 +35,8 @@ var bgmenu = (function (bgmenu, requester) {
                 .done(function (data) {
                     console.log(data);
                 })
-                .fail(function () {
-                    // TODO
+                .fail(function (xhr, status, error) {
+                    console.log("error: " + xhr.responseText);
                 });
         };
 
@@ -45,8 +45,8 @@ var bgmenu = (function (bgmenu, requester) {
                 .done(function (data) {
                     console.log(data);
                 })
-                .fail(function () {
-                    // TODO
+                .fail(function (xhr, status, error) {
+                    console.log("error: " + xhr.responseText);
                 });
         };
 
