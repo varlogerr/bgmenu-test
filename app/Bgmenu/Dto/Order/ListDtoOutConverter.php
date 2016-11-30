@@ -14,21 +14,21 @@ class ListDtoOutConverter {
         $this->productSingleDtoPrototype = $productSingleDto;
     }
 
-    public function process(\Illuminate\Database\Eloquent\Collection $orders) {
+    public function process(\Illuminate\Database\Eloquent\Collection $carts) {
         $returnDto = [];
 
-        foreach ($orders as $order) {
+        foreach ($carts as $cart) {
             $orderDto = clone $this->orderSingleDtoPrototype;
 
-            $orderDto->id = $order->id;
-            $orderDto->status = $order->status;
-            $orderDto->hash = $order->hash;
-            $orderDto->created_at = (string) $order->created_at;
+            $orderDto->id = $cart->id;
+            $orderDto->status = $cart->status;
+            $orderDto->hash = $cart->hash;
+            $orderDto->created_at = (string) $cart->created_at;
             $orderDto->products = [];
             $orderDto->price = 0;
             $orderDto->price_with_vat = 0;
 
-            foreach ($order->orders as $product) {
+            foreach ($cart->orders as $product) {
                 $productDto = clone $this->productSingleDtoPrototype;
 
                 $productDto->id = $product->product->id;
