@@ -30,6 +30,16 @@ var bgmenu = (function (bgmenu, requester) {
                 });
         };
 
+        cart.changeStatus = function (hash, status) {
+            return requester.put('/api/orders/' + hash, {status : status})
+                .done(function (data) {
+                    console.log(data);
+                })
+                .fail(function () {
+                    console.log('Error');
+                });
+        };
+
         return cart;
     }(bgmenu.cart || {}));
 
