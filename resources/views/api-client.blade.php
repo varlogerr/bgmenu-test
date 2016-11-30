@@ -26,7 +26,7 @@
         <h2>Product</h2>
         <h3>Create</h3>
         <code>
-            Price should be in format /^\d{1,7}\.\d{2}$/, available dates Y-m-d
+            // Price should be in format /^\d{1,7}\.\d{2}$/, available dates Y-m-d
             <br>
             bgmenu.product.create({name: "...", description: "...", price: "...", amount: "...", available_from: "...", available_to: "..."});
         </code>
@@ -35,24 +35,24 @@
         <h3>Show</h3>
         <code>bgmenu.product.show(product_id || product_slug);</code>
         <h3>Delete</h3>
-        <code>bgmenu.product.delete(product_id || product_slug);</code>
+        <code>bgmenu.product.delete(product_id);</code>
         <h3>Update</h3>
         <code>bgmenu.product.update(product_id, {...}); // for object in the second param see demo of create</code>
 
         <h2>Order</h2>
         <h3>Create cart / add product to non-checkedout cart</h3>
-        <code>bgmenu.product.cart({product_id: "...", quantity: "..."});</code>
+        <code>bgmenu.cart.add({product_id: "...", quantity: "..."});</code>
         <h3>List</h3>
-        <code>bgmenu.product.list();</code>
+        <code>bgmenu.cart.list();</code>
         <h3>Show</h3>
-        <code>bgmenu.product.show(order_hash);</code>
+        <code>bgmenu.cart.show(order_hash);</code>
         <h3>Change status</h3>
         <code>
             // status rules: 'new' can be changed only to 'processing' or 'cancelled'. 'processing' can be changed only to 'completed'
             <br>
             // 'cancelled' and 'completed' statuses are unchangable
             <br>
-            bgmenu.product.show(order_hash, status);
+            bgmenu.cart.changeStatus(order_hash, status);
         </code>
 
 
