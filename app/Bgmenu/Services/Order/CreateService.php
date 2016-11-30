@@ -12,6 +12,14 @@ class CreateService {
     public function process($data) {
         $this->orderCreateValidator->process($data);
 
+        $product = \App\Product::find($data['product_id']);
+
+        if (! $product->is_available_now) {
+            $validator = \Validator::make([], []);
+            $validator->errors()->add('product_id', 'This product is not available now');
+            throw new \App\Bgmenu\Exceptions\ValidationException('Invalid input', 400, null, $validator->errors()->messages());
+        }
+
         $currentUserId = \Auth::user()->id;
         /* @var $newCart \App\Cart */
         $newCart = \App\Cart::where([
