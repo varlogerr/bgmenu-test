@@ -10,7 +10,7 @@ class ListController extends \App\Http\Controllers\Controller {
     }
 
     public function __invoke() {
-        $orders = \Auth::user()->carts()->with('orders.product')->get();
+        $orders = \Auth::user()->carts()->orderBy('id', 'desc')->with('orders.product')->get();
         return $this->orderListDtoConverter->process($orders);
     }
 }
