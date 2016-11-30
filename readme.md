@@ -1,8 +1,8 @@
 # Test app
 
-1) `git clone` this repo
-2) run `composer install`
-3) copy `vendor/phinger/db.yml` to `private.yml` (on the same level where your vendor dir is)
+1) `git clone` this repo  
+2) run `composer install`  
+3) copy `vendor/phinger/db.yml` to `private.yml` (on the same level where your vendor dir is)  
 and change `dbname`, `dbuser`, `dbpass` and `dsn` keys to correspond to your ones
 ```
 phinger:
@@ -16,6 +16,6 @@ phinger:
     query: SELECT 0;
     dump_path: ./backup/sql/dump.sql
 ```
-No need to create the database on your server, it will be created by the phing script. `dbuser` needs to have privileges to create databases.
-4) run `vendor/bin/phing`
-5) now project is deployed to your machine. Go to the home page of the project and see instructions
+No need to create the database on your server, it will be created by the phing script. `dbuser` needs to have privileges to create databases.  
+4) run `vendor/bin/phing`  
+5) now project is deployed to your machine. Go to the home page of the project and see instructions  
