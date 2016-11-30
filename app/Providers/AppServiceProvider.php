@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         \App\User::observe(\App\Bgmenu\Observers\UserObserver::class);
         \App\Product::observe(\App\Bgmenu\Observers\ProductObserver::class);
+        \App\Cart::observe(\App\Bgmenu\Observers\CartObserver::class);
     }
 
     /**
