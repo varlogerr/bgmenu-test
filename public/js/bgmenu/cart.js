@@ -1,7 +1,7 @@
 var bgmenu = (function (bgmenu, requester) {
     bgmenu.cart = (function (cart) {
         cart.add = function (data) {
-            requester.post('/api/orders', data)
+            return requester.post('/api/orders', data)
                 .done(function (data) {
                     console.log(data);
                 })
@@ -11,7 +11,7 @@ var bgmenu = (function (bgmenu, requester) {
         };
 
         cart.list = function () {
-            requester.get('/api/orders')
+            return requester.get('/api/orders')
                 .done(function (data) {
                     console.log(data);
                 })
@@ -21,7 +21,7 @@ var bgmenu = (function (bgmenu, requester) {
         };
 
         cart.show = function (id) {
-            requester.get('/api/orders/' + id)
+            return requester.get('/api/orders/' + id)
                 .done(function (data) {
                     console.log(data);
                 })
