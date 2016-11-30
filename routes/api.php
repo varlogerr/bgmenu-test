@@ -30,6 +30,7 @@ Route::group(['middleware' => 'format-response-content'], function (\Illuminate\
         $router->post('/orders', 'Order\CreateController');
         $router->get('/orders', 'Order\ListController');
         $router->get('/orders/{hash}', 'Order\ShowController');
+        $router->put('/orders/{hash}', 'Order\UpdateController');
     });
 
 

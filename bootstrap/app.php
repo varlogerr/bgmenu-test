@@ -69,6 +69,10 @@ $app->bind(\App\Bgmenu\Services\Order\CreateValidator::class, function () {
     return new \App\Bgmenu\Services\Order\CreateValidator(config('validation.order-create'));
 });
 
+$app->bind(\App\Bgmenu\Services\Order\UpdateValidator::class, function () {
+    return new \App\Bgmenu\Services\Order\UpdateValidator(config('validation.order-update'));
+});
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
