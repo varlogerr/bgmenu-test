@@ -5,7 +5,7 @@
 If you want to run the application in isolation you can use virtual machines. Here is one, that perfectly matches this very project.  
 1) Install VirtualBox on your machine https://www.virtualbox.org/  
 2) Install vagrant https://www.vagrantup.com/  
-3) Make sure Intel Virtualization Technology and VT-d are enables in you BIOS! We are going  
+3) Make sure Intel Virtualization Technology and VT-d are enables in you BIOS! We are going to use 64-bit os  
 4) Make a directory anywhere on your hard drive and cd to it  
 5) run `git clone https://github.com/varlogerr/env.vagrant.trusty64-base.git .`  
 6) run `git clone https://github.com/varlogerr/env.puppet.phpserv-base.git env/dev` (directory separator in `env/dev` must correspond to ones your operating system)  
