@@ -6,7 +6,7 @@ namespace App\Bgmenu\Services;
 abstract class AbstractValidator {
     private $config;
 
-    public function __construct($config) {
+    public function __construct(array $config = []) {
         $this->config = $config;
     }
 
