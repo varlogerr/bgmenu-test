@@ -29,6 +29,7 @@ Route::group(['middleware' => 'format-response-content'], function (\Illuminate\
     Route::group(['middleware' => 'auth'], function (\Illuminate\Routing\Router $router) {
         $router->post('/orders', 'Order\CreateController');
         $router->get('/orders', 'Order\ListController');
+        $router->get('/orders/{hash}', 'Order\ShowController');
     });
 
 
