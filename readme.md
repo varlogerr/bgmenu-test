@@ -14,7 +14,7 @@ After all installations are complete you'll be in virtual box terminal
 8) cd to `/home/vagrant/Projects/sites/site` and run `rmdir public`  
 In order to clone the project you'll need to clone it to the same directory, (i.e. `site` directory).  
 That means you'll need to run `git clone https://github.com/varlogerr/bgmenu-test.git .` (with the dot in the end!)  
-Now you're ready to install the application, start from instruction 3  
+Now you're ready to install the application  
 
 **NB** when you finish with the application exit the vagrant box with command `exit`  
 and after that run `vagrant destroy -f`, this will remove this virtual box from your machine
@@ -22,9 +22,9 @@ and after that run `vagrant destroy -f`, this will remove this virtual box from 
 ## Install application
 
 1) `git clone` this repo  
-2) cd to the cloned directory 
+2) cd to the cloned directory  
 3) run `composer install`  
-4) copy `vendor/phinger/db.yml` to `private.yml` (on the same level where your vendor dir is)  
+4) copy `vendor/phinger/db/db.yml` to `build.private.yml` (on the same level where your vendor dir is)  
 and change `dbname`, `dbuser`, `dbpass` and `dsn` keys to correspond to your ones
 ```
 phinger:
