@@ -15,6 +15,7 @@ class ChangeOrdersTable extends Migration
     {
         \Schema::table('orders', function (Blueprint $table) {
             $table->dropForeign('orders_user_id_foreign');
+            $table->unsignedInteger('cart_id');
             $table->dropColumn('user_id');
             $table->string('name')->nullable()->change();
             $table->text('description')->nullable()->change();

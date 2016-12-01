@@ -29,5 +29,11 @@
 
         <!-- chmod bootstrap cache -->
         <chmod file="bootstrap/cache" mode="0777" failonerror="false" />
+
+        <!-- Generate application key -->
+        <exec passthru="true" checkreturn="true" executable="php">
+            <arg value="artisan" />
+            <arg value="key:generate" />
+        </exec>
     </target>
 </project>

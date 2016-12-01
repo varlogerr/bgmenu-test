@@ -14,17 +14,21 @@ After all installations are complete you'll be in virtual box terminal
 8) cd to `/home/vagrant/Projects/sites/site` and run `rmdir public`  
 In order to clone the project you'll need to clone it to the same directory, (i.e. `site` directory).  
 That means you'll need to run `git clone https://github.com/varlogerr/bgmenu-test.git .` (with the dot in the end!)  
-Now you're ready to install the application, start from instruction 3  
+Now you're ready to install the application  
 
 **NB** when you finish with the application exit the vagrant box with command `exit`  
 and after that run `vagrant destroy -f`, this will remove this virtual box from your machine
 
+**NB** all users and passwords in the vagrant ubuntu box by convention are vagrant.  
+You'll have php7.0 mysql5.7 installed out of the box. As mentioned earlier there is mysql user `vagrant` with password `vagrant`  
+Sudo password for vagrant user is also `vagrant`  
+
 ## Install application
 
 1) `git clone` this repo  
-2) cd to the cloned directory 
+2) cd to the cloned directory  
 3) run `composer install`  
-4) copy `vendor/phinger/db.yml` to `private.yml` (on the same level where your vendor dir is)  
+4) copy `vendor/phinger/db/db.yml` to `build.private.yml` (on the same level where your vendor dir is)  
 and change `dbname`, `dbuser`, `dbpass` and `dsn` keys to correspond to your ones
 ```
 phinger:
@@ -41,5 +45,7 @@ phinger:
 No need to create the database on your server, it will be created by the phing script. `dbuser` needs to have privileges to create databases.  
 5) copy `.env.example` to `.env`, change database settings to yours and change `MAIL_DRIVER=smtp` to `MAIL_DRIVER=log`  
 6) run `vendor/bin/phing`  
-7) now project is deployed to your machine. Go to the home page of the project and see instructions  
+7) run `php artisan migrate`
+8) run `php artisan seed`
+9) now project is deployed to your machine. Go to the home page of the project and see instructions  
 Now you're ready to learn kung fu
