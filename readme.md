@@ -19,6 +19,10 @@ Now you're ready to install the application
 **NB** when you finish with the application exit the vagrant box with command `exit`  
 and after that run `vagrant destroy -f`, this will remove this virtual box from your machine
 
+**NB** all users and passwords in the vagrant ubuntu box by convention are vagrant.  
+You'll have php7.0 mysql5.7 installed out of the box. As mentioned earlier there is mysql user `vagrant` with password `vagrant`  
+Sudo password for vagrant user is also `vagrant`  
+
 ## Install application
 
 1) `git clone` this repo  
