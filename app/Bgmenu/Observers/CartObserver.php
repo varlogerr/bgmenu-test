@@ -10,6 +10,10 @@ class CartObserver {
         }
     }
 
+    public function creating(\App\Cart $cart) {
+        $cart->hash = \Ramsey\Uuid\Uuid::uuid4();
+    }
+
     private function sendEmail(\App\Cart $cart) {
         $status = 'Created';
         switch ($cart->status) {

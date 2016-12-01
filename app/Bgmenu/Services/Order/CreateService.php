@@ -39,7 +39,6 @@ class CreateService {
                 'user_id' => $currentUserId,
                 'status'  => 'new',
             ]);
-            $newCart->hash = \Ramsey\Uuid\Uuid::uuid4();
         }
 
         if ($order) {
