@@ -23,7 +23,7 @@ class CreateService {
         $currentUserId = \Auth::user()->id;
         /* @var $newCart \App\Cart */
         $newCart = \App\Cart::where([
-            ['user_id', \Auth::user()->id],
+            ['user_id', $currentUserId],
             ['status', 'new'],
         ])->first();
 
