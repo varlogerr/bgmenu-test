@@ -7,16 +7,22 @@ class JsonResponseFormatter implements ResponseFormatterInterface {
      * @inheritdoc
      */
     public function format($data, $code) {
-        $data = json_decode($data);
+        $decodedData = json_decode($data);
 
         $formatted = [
             'error' => null,
-            'payload' => $data,
+            'payload' => $decodedData,
         ];
 
         if ($code >= 400) {
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                $decodedData = [
+                    'code' => $code,
+                    'data' => $data,
+                ];
+            }
             $formatted = [
-                'error' => $data,
+                'error' => $decodedData,
                 'payload' => null,
             ];
         }

@@ -18,7 +18,9 @@ class ResponseFormatter {
         $responseContent = $response->getContent();
         $responseCode = $response->getStatusCode();
         $requestAcceptableContentTypes = $request->getAcceptableContentTypes();
-
+        if ($response->exception) {
+            $responseContent = $response->exception->getMessage();
+        }
         $formatter = $this->responseFormatterFactory->createForContentType($requestAcceptableContentTypes);
         $responseContent = $formatter->format($responseContent, $responseCode);
 
