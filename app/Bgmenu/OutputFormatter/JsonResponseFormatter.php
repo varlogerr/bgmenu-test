@@ -18,7 +18,7 @@ class JsonResponseFormatter implements ResponseFormatterInterface {
             if (json_last_error() !== JSON_ERROR_NONE) {
                 $decodedData = [
                     'code' => $code,
-                    'data' => $data,
+                    'message' => $data,
                 ];
             }
             $formatted = [

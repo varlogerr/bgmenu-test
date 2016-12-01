@@ -46,7 +46,7 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof \app\Bgmenu\Exceptions\ValidationException) {
             return \Response::json([
-                'error'    => $exception->getCode(),
+                'code'    => $exception->getCode(),
                 'messages' => $exception->getMessage(),
                 'info'     => $exception->getInfo(),
             ], $exception->getCode());
