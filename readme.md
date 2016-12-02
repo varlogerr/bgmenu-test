@@ -45,7 +45,7 @@ phinger:
 No need to create the database on your server, it will be created by the phing script. `dbuser` needs to have privileges to create databases.  
 5) copy `.env.example` to `.env`, change database settings to yours and change `MAIL_DRIVER=smtp` to `MAIL_DRIVER=log`  
 6) run `vendor/bin/phing`  
-7) run `php artisan migrate`
-8) run `php artisan seed`
+7) run `php artisan migrate`  
+8) run `php artisan db:seed`  
 9) now project is deployed to your machine. Go to the home page of the project and see instructions  
 Now you're ready to learn kung fu
